@@ -1,4 +1,5 @@
 const getAudio = require('./getAudio')
+const urlValidate = require('./urlValidate')
 
 class ResultPageController{
 
@@ -11,7 +12,7 @@ class ResultPageController{
     }
 
     resultPageMiddleWare(req, res, next){
-        if(req.body.link.includes('https://www.youtube.com/watch?v=')){
+        if(urlValidate(req.body.link)){
             next()
         }else{
             res.send('<script>alert("Please enter correct youtube link"); window.location.href = "/"; </script>');

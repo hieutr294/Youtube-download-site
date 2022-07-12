@@ -4,8 +4,8 @@ html
         script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM' crossorigin='anonymous')
 
     body
-        .d-flex.justify-content-center
-            h1.display-3 Success
+        .d-flex.justify-content-center(style="padding-top:2%")
+            iframe(src=links.iframeUrl , frameborder="0") 
         ul#myTab.nav.nav-tabs(role='tablist')
             li.nav-item(role='presentation')
                 button#home-tab.nav-link.active(data-bs-toggle='tab' data-bs-target='#home' type='button' role='tab' aria-controls='home' aria-selected='true') Audio
@@ -16,12 +16,12 @@ html
                 ul(style="padding-top:10px")
                     each val in links.audio
                         li(style="list-style-type:none")
-                            a(href=val.url, class="btn btn-primary")= `Download ${val.container} ${((val.contentLength*'1')*0.000001).toFixed(2)} MB`
+                            a(href=val.url, class="btn btn-primary", target="_blank")= `Download ${val.container} ${((val.contentLength*'1')*0.000001).toFixed(2)} MB`
                         br
             #profile.tab-pane.fade(role='tabpanel' aria-labelledby='profile-tab')
                 ul(style="padding-top:10px")
                     each val in links.video
                         li(style="list-style-type:none")
-                            a(href=val.url, class="btn btn-primary")= `Download ${val.container} ${((val.contentLength*'1')*0.000001).toFixed(2)} MB`
+                            a(href=val.url, class="btn btn-primary", target="_blank")= `Download ${val.qualityLabel} ${val.container} ${((val.contentLength*'1')*0.000001).toFixed(2)} MB`
                         br
 
