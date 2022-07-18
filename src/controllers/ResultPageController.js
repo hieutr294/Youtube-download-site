@@ -1,5 +1,5 @@
-const getAudio = require('./getAudio')
-const urlValidate = require('./urlValidate')
+const getAudio = require('../models/getAudio')
+const urlValidate = require('../models/urlValidate')
 
 class ResultPageController{
 
